@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030032F02A5D676200AC9516 /* OpenAIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030032EF2A5D676200AC9516 /* OpenAIRequest.swift */; };
+		03003F382A5D747000AC9516 /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03003F372A5D747000AC9516 /* OpenAIResponse.swift */; };
 		057A71312A5B9E9C005BFE43 /* HackathonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A71302A5B9E9C005BFE43 /* HackathonApp.swift */; };
 		057A71332A5B9E9C005BFE43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A71322A5B9E9C005BFE43 /* ContentView.swift */; };
 		057A71352A5B9E9D005BFE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057A71342A5B9E9D005BFE43 /* Assets.xcassets */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030032EF2A5D676200AC9516 /* OpenAIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIRequest.swift; sourceTree = "<group>"; };
+		030032F12A5D68C600AC9516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		03003F372A5D747000AC9516 /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
 		057A712D2A5B9E9C005BFE43 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057A71302A5B9E9C005BFE43 /* HackathonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonApp.swift; sourceTree = "<group>"; };
 		057A71322A5B9E9C005BFE43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030032EE2A5D676200AC9516 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				030032EF2A5D676200AC9516 /* OpenAIRequest.swift */,
+				03003F372A5D747000AC9516 /* OpenAIResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		057A71242A5B9E9C005BFE43 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +78,8 @@
 		057A712F2A5B9E9C005BFE43 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				030032F12A5D68C600AC9516 /* Info.plist */,
+				030032EE2A5D676200AC9516 /* Network */,
 				057A71302A5B9E9C005BFE43 /* HackathonApp.swift */,
 				057A71322A5B9E9C005BFE43 /* ContentView.swift */,
 				057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */,
@@ -219,6 +235,8 @@
 				057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */,
 				057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */,
 				057A71312A5B9E9C005BFE43 /* HackathonApp.swift in Sources */,
+				03003F382A5D747000AC9516 /* OpenAIResponse.swift in Sources */,
+				030032F02A5D676200AC9516 /* OpenAIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +369,13 @@
 				DEVELOPMENT_TEAM = X7974VW6G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hackathon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,11 +401,13 @@
 				DEVELOPMENT_TEAM = X7974VW6G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hackathon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
