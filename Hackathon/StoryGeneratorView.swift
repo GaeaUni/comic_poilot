@@ -11,6 +11,7 @@ struct StoryGeneratorView: View {
     @State private var message = ""
     @State private var selectedShotCount = 1
     @State private var showShotList = false
+    @State private var isLoading = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -39,8 +40,13 @@ struct StoryGeneratorView: View {
             .padding()
 
             Button(action: {
-                // 点击按钮的操作
-                showShotList = true
+                isLoading = true
+                OpenAIRequest().startRequest { success in
+                    isLoading = false
+                    if success {
+                        showShotList = true
+                    }
+                }
             }) {
                 Text("生成分镜")
                     .foregroundColor(.white)
@@ -48,8 +54,8 @@ struct StoryGeneratorView: View {
                     .background(Color.blue) // 设置按钮的背景颜色
                     .cornerRadius(8)
             }
+            .disabled(isLoading) // 如果正在加载，则禁用按钮
             .sheet(isPresented: $showShotList) {
-                
                 ShotListView(shotCount: selectedShotCount)
             }
 
