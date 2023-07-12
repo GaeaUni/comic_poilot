@@ -9,6 +9,8 @@ import Foundation
 import Alamofire
 
 class OpenAIRequest {
+    // 定义部署名称，在下方创建ChatCompletion时会被引用
+    let deploymentName = "gpt-35-turbo-deploy-1"
     var prompt: String = "假设你是知名漫画家，请根据下面的描述，创作短篇漫画大纲。"
     
     let headers: HTTPHeaders = [
@@ -32,19 +34,30 @@ class OpenAIRequest {
         ]
     ]
     
-    var parameters: [String: Any] = [
+//    var parameters: [String: Any] = [
 //        "max_tokens": 6000
-        :
-    ]
+//    ]
     
-    func updatePrompt(prompt: String, number: Int) {
-        let temp = "这是一个平行宇宙，每个人都可能在特定条件下觉醒一项超能力，但大部分人不会觉醒。主角是一个程序员，在长达三十年的人生中，并没有觉醒超能力，只能靠打工赚取微薄的薪水，因此背上了高额的房贷，但是遇到经济危机，为了不断贷，只好借高利贷。后来在高利贷的暴力催收中，意外觉醒超能力。他的超能力是一把键盘，用这把键盘可以敲出任何想要的代码。靠着这项能力，他成为知名科学家，即为人类创造了多项跨时代的技术，又为自己创造了巨额财富。最终他携带巨额财富，携带家人隐居山林，过上了幸福的生活。"
-        self.prompt += temp
-        parameters["messages"] = conversation
+//    func updatePrompt(prompt: String, number: Int) {
+//        let temp = "这是一个平行宇宙，每个人都可能在特定条件下觉醒一项超能力，但大部分人不会觉醒。主角是一个程序员，在长达三十年的人生中，并没有觉醒超能力，只能靠打工赚取微薄的薪水，因此背上了高额的房贷，但是遇到经济危机，为了不断贷，只好借高利贷。后来在高利贷的暴力催收中，意外觉醒超能力。他的超能力是一把键盘，用这把键盘可以敲出任何想要的代码。靠着这项能力，他成为知名科学家，即为人类创造了多项跨时代的技术，又为自己创造了巨额财富。最终他携带巨额财富，携带家人隐居山林，过上了幸福的生活。"
+//        self.prompt += temp
+//        parameters["prompt"] = self.prompt
+//    }
+    
+//    let parameters: [String: Any] = [
+//        "engine": deploymentName,
+//        "messages": conversation
+//    ]
+    
+    private func updatePrompt() -> [String: Any] {
+        return [
+            "engine": deploymentName,
+            "messages": conversation
+        ]
     }
 
-    func startRequest() {
-        updatePrompt(prompt: "", number: 12)
+    func startRequest(completion: @escaping (Bool) -> Void) {
+        let parameters = updatePrompt()
         AF.request("https://hackathon-1.openai.azure.com/openai/deployments/gpt-35-turbo-deploy-1/completions?api-version=2023-05-15",
                    method: .post,
                    parameters: parameters,
@@ -55,13 +68,16 @@ class OpenAIRequest {
             case .success(let value):
                 if let JSON = value as? [String: Any] {
                     print(JSON)
+                    completion(true) // 请求成功，调用完成处理器并传入true
+                } else {
+                    completion(false) // 请求成功，但无法解析JSON，调用完成处理器并传入false
                 }
             case .failure(let error):
                 print(error)
+                completion(false) // 请求失败，调用完成处理器并传入false
             }
         }
     }
-
 }
 
 
