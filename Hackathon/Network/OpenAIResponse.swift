@@ -7,28 +7,40 @@
 
 import Foundation
 
-struct ResponseData: Decodable {
-    let id: String
-    let object: String
-    let created: Int
-    let model: String
-    let usage: Usage
-    let choices: [Choice]
-
-    struct Usage: Decodable {
-        let prompt_tokens: Int
-        let completion_tokens: Int
-        let total_tokens: Int
-    }
-
+struct OpenAIResponse: Decodable {
     struct Choice: Decodable {
-        let message: Message
-        let finish_reason: String
-        let index: Int
-
         struct Message: Decodable {
             let role: String
             let content: String
         }
+        
+        let index: Int
+        let finishReason: String
+        let message: Message
+
+        enum CodingKeys: String, CodingKey {
+            case index
+            case finishReason = "finish_reason"
+            case message
+        }
     }
+    
+    struct Usage: Decodable {
+        let completionTokens: Int
+        let promptTokens: Int
+        let totalTokens: Int
+
+        enum CodingKeys: String, CodingKey {
+            case completionTokens = "completion_tokens"
+            case promptTokens = "prompt_tokens"
+            case totalTokens = "total_tokens"
+        }
+    }
+    
+    let id: String
+    let object: String
+    let created: Int
+    let model: String
+    let choices: [Choice]
+    let usage: Usage
 }
