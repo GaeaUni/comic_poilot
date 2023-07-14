@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 import Kingfisher
 
 struct ContentView: View {
@@ -20,30 +19,30 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-                    List(listData, id: \.self) { item in
-                        NavigationLink(destination: StoryGeneratorView()) {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(item.title)
-                                        .font(.headline)
-                                    Text(item.description)
-                                        .font(.subheadline)
-                                }
-                                .padding()
-                                Spacer()
-                                KFImage(URL(string: item.imageURL))
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                            }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+            List(listData, id: \.self) { item in
+                NavigationLink(destination: StoryGeneratorView()) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.title)
+                                .font(.headline)
+                            Text(item.description)
+                                .font(.subheadline)
                         }
+                        .padding()
+                        Spacer()
+                        KFImage(URL(string: item.imageURL))
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
                     }
-                    .background(Color.gray.opacity(0.1)) // 更改整个列表的背景色为浅灰色
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 }
+            }
+            .background(Color.gray.opacity(0.1)) // 更改整个列表的背景色为浅灰色
         }
+    }
 }
 
 struct ListItem: Hashable {
@@ -51,7 +50,6 @@ struct ListItem: Hashable {
     let description: String
     let imageURL: String
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct ShotListView: View {
-    let chapters: [String]
-    
+    // 分镜数据模型
+    struct Shot {
+        let title: String
+        let description: String
+    }
+
+    let shots: [Shot]
+
     var body: some View {
         NavigationView {
-            List(0..<chapters.count, id: \.self) { index in
-                NavigationLink(destination: EditShotView(shotNumber: index + 1)) {
+            List(shots, id: \.title) { shot in
+                NavigationLink(destination: EditShotView(shot: shot)) {
                     HStack {
-                        Text(chapters[index])
-                            .font(.headline)
-                        
+                        VStack(alignment: .leading) {
+                            Text(shot.title)
+                                .font(.headline)
+                            Text(shot.description)
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                         Spacer()
-                        
+
                         Image(systemName: "pencil.circle")
                             .font(.title)
                             .foregroundColor(.blue)
@@ -30,4 +40,3 @@ struct ShotListView: View {
         }
     }
 }
-

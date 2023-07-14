@@ -5,6 +5,7 @@
 //  Created by 周亮 on 2023/7/10.
 //
 
+import Alamofire
 import SwiftUI
 import Alamofire
 
@@ -18,6 +19,7 @@ struct StoryGeneratorView: View {
     @State private var showShotList = false
     @State private var isLoading = false
     @State private var showAlert = false
+    @State private var shots: [ShotListView.Shot] = []
 
     var body: some View {
         VStack(spacing: 16) {
@@ -51,20 +53,8 @@ struct StoryGeneratorView: View {
                     .scaleEffect(2)
             } else {
                 Button(action: {
-                    isLoading = true
-                    var prompt = message
-                    if prompt.isEmpty {
-                        prompt = defaultMessage
-                    }
-                    dataRequest = request.startRequest(prompt: prompt, chapterNumber: selectedShotCount) { success, chapters in
-                        isLoading = false
-                        if success, let tempChapters = chapters {
-                            showShotList = true
-                            finalChapters = tempChapters
-                        } else {
-                            showAlert = true
-                        }
-                    }
+                    // 点击按钮的操作
+                    generateShots()
                 }) {
                     Text("生成分镜")
                         .foregroundColor(.white)
@@ -74,7 +64,7 @@ struct StoryGeneratorView: View {
                 }
                 .disabled(isLoading) // 如果正在加载，则禁用按钮
                 .sheet(isPresented: $showShotList) {
-                    ShotListView(chapters: finalChapters)
+                    ShotListView(shots: shots)
                 }
                 .padding()
             }
@@ -97,6 +87,36 @@ struct StoryGeneratorView: View {
         }
         .onDisappear{
             dataRequest?.cancel()
+        }
+    }
+}
+
+extension StoryGeneratorView {
+    // 生成分镜
+    func generateShots() {
+        isLoading = true
+        var prompt = message
+        if prompt.isEmpty {
+            prompt = defaultMessage
+        }
+        dataRequest = request.startRequest(prompt: prompt, chapterNumber: selectedShotCount) { success, chapters in
+            isLoading = false
+            if success, let tempChapters = chapters {
+                parseShots(chapters: tempChapters)
+                showShotList = true
+            } else {
+                showAlert = true
+            }
+        }
+    }
+
+    // 解析分镜的数据
+    func parseShots(chapters: [String]) {
+        var index = 0
+        for chapter in chapters {
+            index += 1
+            let short = ShotListView.Shot(title: "第\(index)章节", description: chapter)
+            self.shots.append(short)
         }
     }
 }

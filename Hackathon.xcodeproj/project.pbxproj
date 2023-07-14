@@ -17,6 +17,7 @@
 		057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */; };
 		057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0452A5D77D6005BFE43 /* ShotListView.swift */; };
 		057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0472A5D7CD1005BFE43 /* EditShotView.swift */; };
+		057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AC8AD2A5E931E005BFE43 /* MockData.swift */; };
 		BA02D638DF1705019F614B88 /* Pods_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10898F4F48064F50292862E7 /* Pods_Hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGeneratorView.swift; sourceTree = "<group>"; };
 		057AB0452A5D77D6005BFE43 /* ShotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotListView.swift; sourceTree = "<group>"; };
 		057AB0472A5D7CD1005BFE43 /* EditShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShotView.swift; sourceTree = "<group>"; };
+		057AC8AD2A5E931E005BFE43 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		10898F4F48064F50292862E7 /* Pods_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD02025BFC95154B9A847E8 /* Pods-Hackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.debug.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		66927EE3B25E5EC978CCC3A3 /* Pods-Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				057AB0472A5D7CD1005BFE43 /* EditShotView.swift */,
 				057A71342A5B9E9D005BFE43 /* Assets.xcassets */,
 				057A71362A5B9E9D005BFE43 /* Preview Content */,
+				057AC8AD2A5E931E005BFE43 /* MockData.swift */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			files = (
 				057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */,
 				0397EB0E2A6027B700F659C0 /* JsonTool.swift in Sources */,
+				057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */,
 				057A71332A5B9E9C005BFE43 /* ContentView.swift in Sources */,
 				057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */,
 				057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */,
