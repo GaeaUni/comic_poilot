@@ -65,7 +65,7 @@ class OpenAIRequest {
         
         let request = AF.request(url,
                                  method: .post,
-                                 parameters: ["messages": conversations, "max_tokens": 6000, "temperature": 0.5],
+                                 parameters: ["messages": conversations, "max_tokens": 3000, "temperature": 0.5],
                                  encoding: JSONEncoding.default,
                                  headers: headers,
                                  requestModifier: { $0.timeoutInterval = 180 })
