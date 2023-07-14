@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ShotListView: View {
-    let shotCount: Int
+    let chapters: [String]
     
     var body: some View {
         NavigationView {
-            List(0..<shotCount, id: \.self) { index in
+            List(0..<chapters.count, id: \.self) { index in
                 NavigationLink(destination: EditShotView(shotNumber: index + 1)) {
                     HStack {
-                        Text("分镜\(index + 1)")
+                        Text(chapters[index])
                             .font(.headline)
                         
                         Spacer()
