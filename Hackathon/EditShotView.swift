@@ -5,11 +5,11 @@
 //  Created by 周亮 on 2023/7/11.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct EditShotView: View {
-    let shotNumber: Int
+    let shot: ShotListView.Shot
     @State private var isLoading = false
     @State private var isPreviewing = false
     @State private var previewImage: KFImage? = nil
@@ -17,16 +17,19 @@ struct EditShotView: View {
     @State private var showTextField = true
     @State private var textFieldText = ""
 
+    init(shot: ShotListView.Shot) {
+        self.shot = shot
+        _textFieldText = State(initialValue: shot.description)
+    }
+
     var body: some View {
         VStack {
             if showTextField {
-                TextField("请输入分镜描述", text: $textFieldText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextEditor(text: $textFieldText)
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
             } else if showImage {
-                previewImage?.resizable()
-            
+                previewImage?.resizable().aspectRatio(contentMode: .fit)
             }
 
             if isLoading {
@@ -50,15 +53,16 @@ struct EditShotView: View {
                     Button(action: {
                         isLoading = true
                         previewImage = nil
+                        isPreviewing = true
+                        showTextField = false
+                        showImage = true
 
-                        // 模拟网络请求，延迟2秒后返回图片
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        let description = shot.description.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                        let url = URL(string: "https://image.pollinations.ai/prompt/\(description)")
+                        previewImage = KFImage(url).onSuccess { _ in
                             isLoading = false
-                            isPreviewing = true
-                            showTextField = false
-                            showImage = true
-                            previewImage =  KFImage(URL(string: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/cf33c0fc-81f7-4f69-89fc-6a99cd160527/width=1024/17494-3114415144-,%20(masterpiece_1.2),%20best%20quality,PIXIV,kakao,_1girl,%20solo,%20stethoscope,%20labcoat,%20looking%20to%20the%20side,%20shirt,%20...,%20lanyard,%20doct.jpeg"))
-                                
+                        }.onFailure { _ in
+                            fatalError()
                         }
                     }) {
                         Text("预览分镜")
@@ -73,7 +77,6 @@ struct EditShotView: View {
 
             Spacer()
         }
-        .navigationBarTitle("分镜\(shotNumber)")
+        .navigationBarTitle("\(shot.title)")
     }
 }
-

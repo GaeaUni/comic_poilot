@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030032F02A5D676200AC9516 /* OpenAIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030032EF2A5D676200AC9516 /* OpenAIRequest.swift */; };
+		03003F382A5D747000AC9516 /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03003F372A5D747000AC9516 /* OpenAIResponse.swift */; };
+		0397EB0E2A6027B700F659C0 /* JsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397EB0D2A6027B700F659C0 /* JsonTool.swift */; };
 		057A71312A5B9E9C005BFE43 /* HackathonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A71302A5B9E9C005BFE43 /* HackathonApp.swift */; };
 		057A71332A5B9E9C005BFE43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A71322A5B9E9C005BFE43 /* ContentView.swift */; };
 		057A71352A5B9E9D005BFE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057A71342A5B9E9D005BFE43 /* Assets.xcassets */; };
@@ -14,10 +17,15 @@
 		057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */; };
 		057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0452A5D77D6005BFE43 /* ShotListView.swift */; };
 		057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0472A5D7CD1005BFE43 /* EditShotView.swift */; };
+		057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AC8AD2A5E931E005BFE43 /* MockData.swift */; };
 		BA02D638DF1705019F614B88 /* Pods_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10898F4F48064F50292862E7 /* Pods_Hackathon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030032EF2A5D676200AC9516 /* OpenAIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIRequest.swift; sourceTree = "<group>"; };
+		030032F12A5D68C600AC9516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		03003F372A5D747000AC9516 /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
+		0397EB0D2A6027B700F659C0 /* JsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTool.swift; sourceTree = "<group>"; };
 		057A712D2A5B9E9C005BFE43 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057A71302A5B9E9C005BFE43 /* HackathonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonApp.swift; sourceTree = "<group>"; };
 		057A71322A5B9E9C005BFE43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +34,7 @@
 		057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGeneratorView.swift; sourceTree = "<group>"; };
 		057AB0452A5D77D6005BFE43 /* ShotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotListView.swift; sourceTree = "<group>"; };
 		057AB0472A5D7CD1005BFE43 /* EditShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShotView.swift; sourceTree = "<group>"; };
+		057AC8AD2A5E931E005BFE43 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		10898F4F48064F50292862E7 /* Pods_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD02025BFC95154B9A847E8 /* Pods-Hackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.debug.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		66927EE3B25E5EC978CCC3A3 /* Pods-Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +52,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030032EE2A5D676200AC9516 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				030032EF2A5D676200AC9516 /* OpenAIRequest.swift */,
+				03003F372A5D747000AC9516 /* OpenAIResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0397EB0C2A6027B700F659C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0397EB0D2A6027B700F659C0 /* JsonTool.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		057A71242A5B9E9C005BFE43 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +90,9 @@
 		057A712F2A5B9E9C005BFE43 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				030032F12A5D68C600AC9516 /* Info.plist */,
+				0397EB0C2A6027B700F659C0 /* Common */,
+				030032EE2A5D676200AC9516 /* Network */,
 				057A71302A5B9E9C005BFE43 /* HackathonApp.swift */,
 				057A71322A5B9E9C005BFE43 /* ContentView.swift */,
 				057A99602A5C36C0005BFE43 /* StoryGeneratorView.swift */,
@@ -71,6 +100,7 @@
 				057AB0472A5D7CD1005BFE43 /* EditShotView.swift */,
 				057A71342A5B9E9D005BFE43 /* Assets.xcassets */,
 				057A71362A5B9E9D005BFE43 /* Preview Content */,
+				057AC8AD2A5E931E005BFE43 /* MockData.swift */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -215,10 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */,
+				0397EB0E2A6027B700F659C0 /* JsonTool.swift in Sources */,
+				057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */,
 				057A71332A5B9E9C005BFE43 /* ContentView.swift in Sources */,
 				057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */,
 				057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */,
 				057A71312A5B9E9C005BFE43 /* HackathonApp.swift in Sources */,
+				03003F382A5D747000AC9516 /* OpenAIResponse.swift in Sources */,
+				030032F02A5D676200AC9516 /* OpenAIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +385,13 @@
 				DEVELOPMENT_TEAM = X7974VW6G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hackathon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,11 +417,13 @@
 				DEVELOPMENT_TEAM = X7974VW6G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hackathon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
