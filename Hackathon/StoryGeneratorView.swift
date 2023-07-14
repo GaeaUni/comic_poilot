@@ -112,11 +112,12 @@ extension StoryGeneratorView {
 
     // 解析分镜的数据
     func parseShots(chapters: [String]) {
+        shots.removeAll()
         var index = 0
         for chapter in chapters {
             index += 1
             let short = ShotListView.Shot(title: "第\(index)章节", description: chapter)
-            self.shots.append(short)
+            shots.append(short)
         }
     }
 }
