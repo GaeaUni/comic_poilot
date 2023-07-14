@@ -18,6 +18,9 @@
 		057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0452A5D77D6005BFE43 /* ShotListView.swift */; };
 		057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AB0472A5D7CD1005BFE43 /* EditShotView.swift */; };
 		057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AC8AD2A5E931E005BFE43 /* MockData.swift */; };
+		057AD9602A602B5E005BFE43 /* CannyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AD95F2A602B5E005BFE43 /* CannyAPI.swift */; };
+		057AD9622A602EDE005BFE43 /* Alamofire+Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057AD9612A602EDE005BFE43 /* Alamofire+Await.swift */; };
+		057AD9662A6120D1005BFE43 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 057AD9652A6120D1005BFE43 /* OpenCVWrapper.mm */; };
 		BA02D638DF1705019F614B88 /* Pods_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10898F4F48064F50292862E7 /* Pods_Hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,11 @@
 		057AB0452A5D77D6005BFE43 /* ShotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotListView.swift; sourceTree = "<group>"; };
 		057AB0472A5D7CD1005BFE43 /* EditShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShotView.swift; sourceTree = "<group>"; };
 		057AC8AD2A5E931E005BFE43 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		057AD95F2A602B5E005BFE43 /* CannyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannyAPI.swift; sourceTree = "<group>"; };
+		057AD9612A602EDE005BFE43 /* Alamofire+Await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Await.swift"; sourceTree = "<group>"; };
+		057AD9632A6120D0005BFE43 /* Hackathon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackathon-Bridging-Header.h"; sourceTree = "<group>"; };
+		057AD9642A6120D1005BFE43 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		057AD9652A6120D1005BFE43 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		10898F4F48064F50292862E7 /* Pods_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD02025BFC95154B9A847E8 /* Pods-Hackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.debug.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		66927EE3B25E5EC978CCC3A3 /* Pods-Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.release.xcconfig"; path = "Target Support Files/Pods-Hackathon/Pods-Hackathon.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +109,11 @@
 				057A71342A5B9E9D005BFE43 /* Assets.xcassets */,
 				057A71362A5B9E9D005BFE43 /* Preview Content */,
 				057AC8AD2A5E931E005BFE43 /* MockData.swift */,
+				057AD95F2A602B5E005BFE43 /* CannyAPI.swift */,
+				057AD9612A602EDE005BFE43 /* Alamofire+Await.swift */,
+				057AD9642A6120D1005BFE43 /* OpenCVWrapper.h */,
+				057AD9652A6120D1005BFE43 /* OpenCVWrapper.mm */,
+				057AD9632A6120D0005BFE43 /* Hackathon-Bridging-Header.h */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 				TargetAttributes = {
 					057A712C2A5B9E9C005BFE43 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -246,13 +260,16 @@
 			files = (
 				057AB0482A5D7CD1005BFE43 /* EditShotView.swift in Sources */,
 				0397EB0E2A6027B700F659C0 /* JsonTool.swift in Sources */,
+				057AD9622A602EDE005BFE43 /* Alamofire+Await.swift in Sources */,
 				057AC8AE2A5E931E005BFE43 /* MockData.swift in Sources */,
 				057A71332A5B9E9C005BFE43 /* ContentView.swift in Sources */,
 				057A99612A5C36C0005BFE43 /* StoryGeneratorView.swift in Sources */,
+				057AD9662A6120D1005BFE43 /* OpenCVWrapper.mm in Sources */,
 				057AB0462A5D77D6005BFE43 /* ShotListView.swift in Sources */,
 				057A71312A5B9E9C005BFE43 /* HackathonApp.swift in Sources */,
 				03003F382A5D747000AC9516 /* OpenAIResponse.swift in Sources */,
 				030032F02A5D676200AC9516 /* OpenAIRequest.swift in Sources */,
+				057AD9602A602B5E005BFE43 /* CannyAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon/Preview Content\"";
@@ -400,6 +418,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkworld.shulong.Hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackathon/Hackathon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -411,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon/Preview Content\"";
@@ -432,6 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkworld.shulong.Hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackathon/Hackathon-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

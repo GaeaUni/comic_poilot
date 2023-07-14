@@ -6,6 +6,7 @@ target 'Hackathon' do
   use_frameworks!
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'OpenCV2'
   # Pods for Hackathon
 
 end
